@@ -1,8 +1,11 @@
-# АЙБАЗА — сайт импорта автомобилей
+# АЙБАЗА — импорт авто в Уфу и Башкортостан
 
 Next.js (App Router) + TypeScript + Tailwind CSS.
 
-## Локальный запуск
+**Репозиторий:** https://github.com/gameai2027-gif/aybaza-site  
+**Статус:** лендинг под заявки «под ключ» (Китай / Корея / Япония), SEO/GEO Уфа + РБ, калькулятор 2026.
+
+## Локально
 
 ```bash
 git clone https://github.com/gameai2027-gif/aybaza-site.git
@@ -11,22 +14,25 @@ npm install
 npm run dev
 ```
 
-Откройте http://localhost:3000
+http://localhost:3000
 
-## Деплой на Vercel (рекомендуется)
+## Vercel (рекомендуется)
 
-1. Зайдите на https://vercel.com → Login with GitHub
-2. **Add New → Project** → выберите `aybaza-site` → **Import**
-3. **Deploy** (настройки по умолчанию)
-4. Откройте выданную ссылку `https://….vercel.app`
+1. https://vercel.com → Login with GitHub  
+2. Import `aybaza-site` → Deploy  
+3. Ссылка вида `https://….vercel.app`
 
-На Vercel сайт работает в корне домена (без `/aybaza-site`).
+На Vercel `GITHUB_PAGES` не задаётся → сайт в корне домена.
 
 ## GitHub Pages
 
-Ссылка: https://gameai2027-gif.github.io/aybaza-site/
+Settings → Pages → Source: **GitHub Actions**.  
+Сборка с `GITHUB_PAGES=true` → https://gameai2027-gif.github.io/aybaza-site/
 
-После push в `main` GitHub Actions собирает статику и публикует Pages.
+## Структура
 
-В настройках репозитория:
-**Settings → Pages → Build and deployment → Source: GitHub Actions**
+- `src/lib/site.ts` — единый NAP и зона обслуживания  
+- Блоки: Hero, Stats, Problem/Solution, калькулятор, форма, контакты  
+- JSON-LD AutoDealer  
+
+Перед продом: реальные телефон/ИНН/фото, CRM, политика ПДн.

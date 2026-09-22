@@ -6,10 +6,11 @@ import { cn } from "@/lib/utils";
 import { SITE } from "@/lib/site";
 
 const navItems = [
-  { label: "Преимущества", href: "#advantages" },
-  { label: "Калькулятор", href: "#calculator" },
+  { label: "Бренды", href: "#brands" },
   { label: "Как работаем", href: "#how-it-works" },
-  { label: "Отзывы", href: "#reviews" },
+  { label: "Калькулятор", href: "#calculator" },
+  { label: "Кейсы", href: "#reviews" },
+  { label: "FAQ", href: "#faq" },
   { label: "Контакты", href: "#contacts" },
 ];
 

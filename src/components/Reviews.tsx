@@ -1,21 +1,53 @@
-const reviews = [
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { formatPrice } from "@/lib/utils";
+
+const cases = [
   {
-    name: "Айрат М.",
-    city: "Уфа",
-    text: "Привезли Geely Monjaro. Всё прозрачно, по срокам уложились. Особенно понравилось, что можно было приехать в офис и всё обсудить лично.",
-    rating: 5,
+    model: "Audi Q7 2024, 3.0 TDI",
+    from: "Китай → Уфа",
+    priceChina: "¥650 000",
+    total: 9200000,
+    days: 28,
+    comment: "Клиент искал альтернативу официальному дилеру, сэкономил 1 500 000 ₽.",
+    client: "Артём, Уфа",
   },
   {
-    name: "Елена К.",
-    city: "Стерлитамак",
-    text: "Долго выбирала между Кореей и Китаем. Ребята показали несколько вариантов с отчётами. В итоге взяли Tucson — довольна.",
-    rating: 5,
+    model: "BMW X5 2024, xDrive40i",
+    from: "Китай → Уфа",
+    priceChina: "¥600 000",
+    total: 8500000,
+    days: 25,
+    comment: "Привезли в цвете, который недоступен у официалов в РФ.",
+    client: "Марат, Уфа",
   },
   {
-    name: "Руслан И.",
-    city: "Нефтекамск",
-    text: "Растаможка без сюрпризов — цифры совпали с предварительным расчётом. Рекомендую тем, кто не хочет разбираться сам.",
-    rating: 5,
+    model: "Li Auto L7 Pro 2024",
+    from: "Китай → Уфа",
+    priceChina: "¥350 000",
+    total: 4850000,
+    days: 21,
+    comment: "Популярная модель, привозим ежемесячно по 5–7 штук.",
+    client: "Артур, Уфа",
+  },
+  {
+    model: "Genesis GV80",
+    from: "Корея → Стерлитамак",
+    priceChina: "—",
+    total: 5600000,
+    days: 38,
+    comment: "Нашли идеальный вариант с корейского рынка и полностью растаможили.",
+    client: "Динар, Стерлитамак",
+  },
+  {
+    model: "Toyota Land Cruiser 300",
+    from: "ОАЭ → Уфа",
+    priceChina: "—",
+    total: 9200000,
+    days: 45,
+    comment: "Внедорожник из Эмиратов в максимальной версии. Расчёт совпал до рубля.",
+    client: "Рустем, Уфа",
   },
 ];
 
@@ -25,47 +57,57 @@ export function Reviews() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mb-14">
           <p className="text-sm font-semibold uppercase tracking-wider text-orange-400 mb-3">
-            Отзывы клиентов
+            Наши кейсы
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
-            Что говорят те, кто уже привёз авто
+            Уже привезли в Башкортостан
           </h2>
+          <p className="mt-4 text-slate-400">
+            Реальные примеры автомобилей, доставленных клиентам под ключ, с итоговой ценой и сроком.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {reviews.map((r, idx) => (
-            <blockquote
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {cases.map((c, idx) => (
+            <article
               key={idx}
               className="card-premium rounded-2xl p-6 sm:p-7 flex flex-col"
             >
-              <div className="flex gap-1 mb-4">
-                {Array.from({ length: r.rating }).map((_, i) => (
-                  <svg
-                    key={i}
-                    className="h-4 w-4 text-orange-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
-              </div>
-              <p className="text-slate-300 text-sm leading-relaxed flex-1 mb-6">
-                «{r.text}»
-              </p>
-              <footer className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 text-sm font-semibold text-orange-400">
-                  {r.name.charAt(0)}
-                </div>
+              <div className="flex items-start justify-between gap-3 mb-4">
                 <div>
-                  <cite className="not-italic font-medium text-white text-sm">
-                    {r.name}
-                  </cite>
-                  <p className="text-xs text-slate-500">{r.city}</p>
+                  <h3 className="text-base font-semibold text-white">{c.model}</h3>
+                  <p className="text-xs text-slate-500 mt-1">{c.from}</p>
                 </div>
-              </footer>
-            </blockquote>
+                <span className="shrink-0 rounded-md bg-orange-500/15 px-2 py-1 text-[11px] font-medium text-orange-300">
+                  {c.days} дн.
+                </span>
+              </div>
+
+              <p className="text-sm text-slate-400 leading-relaxed flex-1 mb-5">
+                «{c.comment}»
+              </p>
+
+              <div className="border-t border-slate-800 pt-4 space-y-2 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-slate-500">Итого под ключ</span>
+                  <span className="font-semibold text-orange-400">{formatPrice(c.total)}</span>
+                </div>
+                <p className="text-xs text-slate-500">{c.client}</p>
+              </div>
+            </article>
           ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <Button
+            variant="outline"
+            size="lg"
+            onClick={() =>
+              document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" })
+            }
+          >
+            Хочу такой же расчёт
+          </Button>
         </div>
       </div>
     </section>

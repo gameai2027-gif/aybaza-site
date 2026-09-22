@@ -9,7 +9,10 @@ const items = [
 
 export function StatsBar() {
   return (
-    <section className="border-y border-slate-800/80 bg-slate-900/40" aria-label="Ключевые показатели">
+    <section
+      className="border-y border-slate-800/80 bg-slate-900/40"
+      aria-label="Ключевые показатели"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-slate-800/80">
           {items.map((item) => (

@@ -13,7 +13,7 @@ export function Footer() {
               <span className="text-lg font-bold text-white">{SITE.shortName}</span>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed">
-              Импорт автомобилей из Китая, Кореи и Японии с доставкой в Уфу и
+              Импорт автомобилей из Китая, Кореи и ОАЭ с доставкой в Уфу и
               Башкортостан. Полный цикл «под ключ».
             </p>
           </div>
@@ -21,10 +21,11 @@ export function Footer() {
           <div>
             <h4 className="text-sm font-semibold text-white mb-4">Навигация</h4>
             <ul className="space-y-2.5 text-sm text-slate-400">
-              <li><a href="#advantages" className="hover:text-orange-400 transition">Преимущества</a></li>
-              <li><a href="#calculator" className="hover:text-orange-400 transition">Калькулятор</a></li>
+              <li><a href="#brands" className="hover:text-orange-400 transition">Бренды</a></li>
               <li><a href="#how-it-works" className="hover:text-orange-400 transition">Как работаем</a></li>
-              <li><a href="#reviews" className="hover:text-orange-400 transition">Отзывы</a></li>
+              <li><a href="#calculator" className="hover:text-orange-400 transition">Калькулятор</a></li>
+              <li><a href="#reviews" className="hover:text-orange-400 transition">Кейсы</a></li>
+              <li><a href="#faq" className="hover:text-orange-400 transition">FAQ</a></li>
             </ul>
           </div>
 
@@ -41,8 +42,8 @@ export function Footer() {
           <div>
             <h4 className="text-sm font-semibold text-white mb-4">Документы</h4>
             <ul className="space-y-2.5 text-sm text-slate-400">
-              <li><a href="#" className="hover:text-orange-400 transition">Политика конфиденциальности</a></li>
-              <li><a href="#" className="hover:text-orange-400 transition">Пользовательское соглашение</a></li>
+              <li><span className="text-slate-500">Политика конфиденциальности — в разработке</span></li>
+              <li><span className="text-slate-500">Пользовательское соглашение — в разработке</span></li>
             </ul>
           </div>
         </div>

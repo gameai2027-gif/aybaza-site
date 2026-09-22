@@ -40,7 +40,7 @@ export function Header() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <a href="/" className="flex items-center gap-2.5 group">
+          <a href="./" className="flex items-center gap-2.5 group">
             <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-orange-500 font-black text-white text-lg shadow-lg shadow-orange-500/30 transition group-hover:scale-105">А</div>
             <div className="flex flex-col leading-none">
               <span className="text-lg font-bold tracking-tight text-white">{SITE.shortName}</span>

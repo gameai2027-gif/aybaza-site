@@ -4,10 +4,12 @@ import { StatsBar } from "@/components/StatsBar";
 import { ProblemSolution } from "@/components/ProblemSolution";
 import { TrustBar } from "@/components/TrustBar";
 import { Advantages } from "@/components/Advantages";
+import { Brands } from "@/components/Brands";
 import { PopularCars } from "@/components/PopularCars";
 import { Calculator } from "@/components/Calculator";
 import { HowItWorks } from "@/components/HowItWorks";
 import { Reviews } from "@/components/Reviews";
+import { FAQ } from "@/components/FAQ";
 import { WhyUs } from "@/components/WhyUs";
 import { ServiceArea } from "@/components/ServiceArea";
 import { LeadForm } from "@/components/LeadForm";
@@ -21,7 +23,7 @@ export default function HomePage() {
     name: SITE.name,
     alternateName: SITE.shortName,
     description:
-      "Импорт автомобилей из Китая, Кореи и Японии с доставкой в Уфу и Республику Башкортостан",
+      "Импорт автомобилей из Китая, Кореи и ОАЭ с доставкой в Уфу и Республику Башкортостан. Audi, BMW, Mercedes, Toyota, Lexus, Li Auto, Zeekr и другие бренды.",
     url: "https://aybaza.ru",
     telephone: SITE.phoneHref.replace("tel:", ""),
     email: SITE.email,
@@ -47,10 +49,9 @@ export default function HomePage() {
         "Thursday",
         "Friday",
         "Saturday",
-        "Sunday",
       ],
       opens: "09:00",
-      closes: "21:00",
+      closes: "18:00",
     },
     areaServed: SITE.serviceArea.map((city) => ({
       "@type": "City",
@@ -72,10 +73,12 @@ export default function HomePage() {
         <ProblemSolution />
         <TrustBar />
         <Advantages />
+        <Brands />
         <PopularCars />
-        <Calculator />
         <HowItWorks />
+        <Calculator />
         <Reviews />
+        <FAQ />
         <WhyUs />
         <ServiceArea />
         <LeadForm />
